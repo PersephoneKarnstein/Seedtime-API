@@ -1,0 +1,166 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Burp2API - app",
+    "version": "1.0.0",
+    "description": "This API has been built with [Burp2API](https://github.com/MrTurvey/Burp2API). This is NOT a replacement for proper documentation that should stem from the official developers."
+  },
+  "servers": [
+    {
+      "url": "https://app.seedtime.us"
+    }
+  ],
+  "paths": {
+    "/api/active_subscription": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/colors": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/crops": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/garden_crops": {
+      "get": {
+        "responses": {
+          "500": {
+            "description": "Response status 500"
+          }
+        },
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "months_number",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "year_month",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/gardens/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/gardens/302004": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/gardens/current": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/gardens/current/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/notes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/notes/plantings": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        }
+      }
+    },
+    "/api/tasks": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Response status 200"
+          }
+        },
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "view",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

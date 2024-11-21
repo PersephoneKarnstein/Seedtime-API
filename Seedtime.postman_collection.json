@@ -1,0 +1,825 @@
+{
+	"info": {
+		"_postman_id": "5c9e3cde-a54d-49ff-ab25-b09484788698",
+		"name": "Seedtime",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39035692"
+	},
+	"item": [
+		{
+			"name": "mutations",
+			"item": [
+				{
+					"name": "bulkDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation bulkDelete ($input: BulkDeleteInput!) {\n    bulkDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"groupIds\": [\n      0\n    ],\n    \"plantingLocationIds\": [\n      0\n    ],\n    \"plantingFormationIds\": [\n      0\n    ],\n    \"landmarkIds\": [\n      0\n    ]\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bulkDuplicate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation bulkDuplicate ($input: BulkDuplicateInput!) {\n    bulkDuplicate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"shiftBy\": {\n      \"x\": \"\",\n      \"y\": \"\"\n    },\n    \"groupIds\": [\n      0\n    ],\n    \"plantingLocationIds\": [\n      0\n    ],\n    \"landmarkIds\": [\n      0\n    ]\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bulkUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation bulkUpdate ($input: BulkUpdateInput!) {\n    bulkUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"plantingLocationInputs\": {\n      \"id\": 0,\n      \"input\": {\n        \"name\": \"\",\n        \"fillColor\": \"\",\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        },\n        \"plantingFormationsAttributes\": {\n          \"id\": 0,\n          \"shape\": {},\n          \"clusters\": {},\n          \"_destroy\": true\n        }\n      }\n    },\n    \"plantingFormationInputs\": {\n      \"id\": 0,\n      \"input\": {\n        \"pattern\": \"\",\n        \"plantSpacing\": 0,\n        \"rowSpacing\": 0,\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        },\n        \"clusters\": {\n          \"plantCount\": 0,\n          \"shape\": {},\n          \"rows\": {}\n        },\n        \"plantingLocationId\": 0,\n        \"gardenCropId\": 0,\n        \"draft\": true\n      }\n    },\n    \"landmarkInputs\": {\n      \"id\": 0,\n      \"input\": {\n        \"name\": \"\",\n        \"fillColor\": \"\",\n        \"iconName\": \"\",\n        \"strokeColor\": \"\",\n        \"strokeWidth\": 0,\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        }\n      }\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cropScheduleDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation cropScheduleDelete ($input: CropScheduleDeleteInput!) {\n    cropScheduleDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gardenPlanCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation gardenPlanCreate ($input: GardenPlanCreateInput!) {\n    gardenPlanCreate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanInput\": {\n      \"width\": 0,\n      \"height\": 0\n    },\n    \"gardenId\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gardenPlanUndoRedo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation gardenPlanUndoRedo ($input: GardenPlanUndoRedoInput!) {\n    gardenPlanUndoRedo (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"isRedo\": true\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gardenPlanUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation gardenPlanUpdate ($input: GardenPlanUpdateInput!) {\n    gardenPlanUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"gardenPlanInput\": {\n      \"width\": 0,\n      \"height\": 0\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gardenUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation gardenUpdate ($input: GardenUpdateInput!) {\n    gardenUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"gardenInput\": {\n      \"lockTasks\": true\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation groupCreate ($input: GroupCreateInput!) {\n    groupCreate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"groupInput\": {\n      \"name\": \"\",\n      \"plantingLocationIds\": [\n        0\n      ],\n      \"landmarkIds\": [\n        0\n      ]\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation groupDelete ($input: GroupDeleteInput!) {\n    groupDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupDuplicate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation groupDuplicate ($input: GroupDuplicateInput!) {\n    groupDuplicate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"shiftBy\": {\n      \"x\": \"\",\n      \"y\": \"\"\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupUngroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation groupUngroup ($input: GroupUngroupInput!) {\n    groupUngroup (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation groupUpdate ($input: GroupUpdateInput!) {\n    groupUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"groupInput\": {\n      \"name\": \"\",\n      \"plantingLocationIds\": [\n        0\n      ],\n      \"landmarkIds\": [\n        0\n      ]\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "landmarkCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation landmarkCreate ($input: LandmarkCreateInput!) {\n    landmarkCreate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"landmarkInput\": {\n      \"name\": \"\",\n      \"fillColor\": \"\",\n      \"iconName\": \"\",\n      \"strokeColor\": \"\",\n      \"strokeWidth\": 0,\n      \"shape\": {\n        \"segments\": {\n          \"start\": {},\n          \"bezierControlPoints\": {}\n        },\n        \"rotation\": \"\"\n      }\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "landmarkDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation landmarkDelete ($input: LandmarkDeleteInput!) {\n    landmarkDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "landmarkDuplicate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation landmarkDuplicate ($input: LandmarkDuplicateInput!) {\n    landmarkDuplicate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"shiftBy\": {\n      \"x\": \"\",\n      \"y\": \"\"\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "landmarkUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation landmarkUpdate ($input: LandmarkUpdateInput!) {\n    landmarkUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"landmarkInput\": {\n      \"name\": \"\",\n      \"fillColor\": \"\",\n      \"iconName\": \"\",\n      \"strokeColor\": \"\",\n      \"strokeWidth\": 0,\n      \"shape\": {\n        \"segments\": {\n          \"start\": {},\n          \"bezierControlPoints\": {}\n        },\n        \"rotation\": \"\"\n      }\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "layerUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation layerUpdate ($input: LayerUpdateInput!) {\n    layerUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"layerInput\": {\n      \"hidden\": true,\n      \"indexPosition\": 0,\n      \"groupId\": 0\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingAddSuccession",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingAddSuccession ($input: PlantingAddSuccessionInput!) {\n    plantingAddSuccession (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingAddSuccessionWarning",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingAddSuccessionWarning ($input: PlantingAddSuccessionWarningInput!) {\n    plantingAddSuccessionWarning (input: $input) {\n        clientMutationId\n        warning\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingDelete ($input: PlantingDeleteInput!) {\n    plantingDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingDuplicate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingDuplicate ($input: PlantingDuplicateInput!) {\n    plantingDuplicate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingFormationCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingFormationCreate ($input: PlantingFormationCreateInput!) {\n    plantingFormationCreate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"plantingFormationInput\": {\n      \"pattern\": \"\",\n      \"plantSpacing\": 0,\n      \"rowSpacing\": 0,\n      \"shape\": {\n        \"segments\": {\n          \"start\": {},\n          \"bezierControlPoints\": {}\n        },\n        \"rotation\": \"\"\n      },\n      \"clusters\": {\n        \"plantCount\": 0,\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        },\n        \"rows\": {\n          \"start\": {},\n          \"end\": {}\n        }\n      },\n      \"plantingLocationId\": 0,\n      \"gardenCropId\": 0,\n      \"draft\": true\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingFormationDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingFormationDelete ($input: PlantingFormationDeleteInput!) {\n    plantingFormationDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingFormationUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingFormationUpdate ($input: PlantingFormationUpdateInput!) {\n    plantingFormationUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"plantingFormationInput\": {\n      \"pattern\": \"\",\n      \"plantSpacing\": 0,\n      \"rowSpacing\": 0,\n      \"shape\": {\n        \"segments\": {\n          \"start\": {},\n          \"bezierControlPoints\": {}\n        },\n        \"rotation\": \"\"\n      },\n      \"clusters\": {\n        \"plantCount\": 0,\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        },\n        \"rows\": {\n          \"start\": {},\n          \"end\": {}\n        }\n      },\n      \"plantingLocationId\": 0,\n      \"gardenCropId\": 0,\n      \"draft\": true\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingLocationCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingLocationCreate ($input: PlantingLocationCreateInput!) {\n    plantingLocationCreate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"gardenPlanId\": 0,\n    \"plantingLocationInput\": {\n      \"name\": \"\",\n      \"fillColor\": \"\",\n      \"shape\": {\n        \"segments\": {\n          \"start\": {},\n          \"bezierControlPoints\": {}\n        },\n        \"rotation\": \"\"\n      },\n      \"plantingFormationsAttributes\": {\n        \"id\": 0,\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        },\n        \"clusters\": {\n          \"plantCount\": 0,\n          \"shape\": {},\n          \"rows\": {}\n        },\n        \"_destroy\": true\n      }\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingLocationDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingLocationDelete ($input: PlantingLocationDeleteInput!) {\n    plantingLocationDelete (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingLocationDuplicate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingLocationDuplicate ($input: PlantingLocationDuplicateInput!) {\n    plantingLocationDuplicate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"shiftBy\": {\n      \"x\": \"\",\n      \"y\": \"\"\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingLocationUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingLocationUpdate ($input: PlantingLocationUpdateInput!) {\n    plantingLocationUpdate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0,\n    \"plantingLocationInput\": {\n      \"name\": \"\",\n      \"fillColor\": \"\",\n      \"shape\": {\n        \"segments\": {\n          \"start\": {},\n          \"bezierControlPoints\": {}\n        },\n        \"rotation\": \"\"\n      },\n      \"plantingFormationsAttributes\": {\n        \"id\": 0,\n        \"shape\": {\n          \"segments\": {},\n          \"rotation\": \"\"\n        },\n        \"clusters\": {\n          \"plantCount\": 0,\n          \"shape\": {},\n          \"rows\": {}\n        },\n        \"_destroy\": true\n      }\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plantingToggleLink",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation plantingToggleLink ($input: PlantingToggleLinkInput!) {\n    plantingToggleLink (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "switchPrimaryGarden",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation switchPrimaryGarden ($input: SwitchPrimaryGardenInput!) {\n    switchPrimaryGarden (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"id\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "taskMoveCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation taskMoveCreate ($input: TaskMoveCreateInput!) {\n    taskMoveCreate (input: $input) {\n        clientMutationId\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"taskId\": 0,\n    \"taskMove\": {\n      \"startDelta\": 0,\n      \"endDelta\": 0\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "taskMoveWarning",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation taskMoveWarning ($input: TaskMoveWarningInput!) {\n    taskMoveWarning (input: $input) {\n        clientMutationId\n        warning\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"clientMutationId\": \"\",\n    \"taskId\": 0,\n    \"taskMove\": {\n      \"startDelta\": 0,\n      \"endDelta\": 0\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "gardens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query gardens {\n\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query me {\n    me {\n        canAddGardens\n        email\n        firstname\n        id\n        lastname\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "node",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query node ($id: ID!) {\n    node (id: $id) {\n        id\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nodes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query nodes ($ids: [ID!]!) {\n    nodes (ids: $ids) {\n        id\n    }\n}",
+								"variables": "{\n  \"ids\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "primaryGarden",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query primaryGarden {\n    primaryGarden {\n        id\n        lockTasks\n        title\n        winterGardeningEnabled\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "any"
+		}
+	]
+}
